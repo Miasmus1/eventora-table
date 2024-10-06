@@ -1,15 +1,16 @@
 import styles from './EventStatusIndicator.module.css';
 
 function EventStatusIndicator({ status }) {
+  console.log(status);
   return (
-    <div className={`styles.statusIndicator`}>
+    <>
       <span
-        className={`${styles.statusIndicator}  ${
-          status === 'OFFSALE' ? styles.red : status === 'RESCHEDULED' ? styles.orange : ''
+        className={`${styles.statusIndicator} ${
+          status === 'offsale' ? styles.red : status === 'rescheduled' ? styles.orange : ''
         }`}
-      ></span>{' '}
+      ></span>
       {status.toUpperCase()}
-    </div>
+    </>
   );
 }
 
