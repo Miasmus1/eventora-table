@@ -11,6 +11,8 @@
   max-width: 90rem;
 
   margin: 10rem auto;
+
+  box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 
 .eventDetailsContainer h2 {
@@ -18,5 +20,33 @@
 }
 
 .eventDetailsContainer img {
-  width: 40%;
+  width: 50%;
+}
+
+.eventDetailsNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 3rem;
+}
+
+.eventDetailsNav a {
+  all: unset;
+  cursor: pointer;
+  color: var(--accent-row-color);
+
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 3rem;
+  border: 1px solid var(--accent-row-color);
+  border-radius: 5px;
+  padding: 1rem 2rem;
+}
+
+.eventDetailsNav a:hover {
+  color: var(--focus-color);
+  border-color: var(--focus-color);
 }

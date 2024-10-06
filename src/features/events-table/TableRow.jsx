@@ -1,28 +1,28 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import formatDate from '../../utils/formatDate';
 
 import styles from './TableRow.module.css';
+import EventStatusIndicator from '../../ui/EventStatusIndicator';
 
 function TableRow({ event }) {
+  const navigate = useNavigate();
   const localFormatDate = formatDate(event.dates.start.localDate);
 
   const { classifications, dates, _embedded: { venues } = {} } = event;
+  const eventStatus = dates?.status?.code;
 
-  const eventStatus = dates.status.code.toUpperCase();
+  function handleRowClick() {
+    navigate(`/events/${event.id}`);
+  }
 
   return (
-    <tr className={styles.tableRow}>
+    <tr className={styles.tableRow} onClick={handleRowClick}>
       <th scope="row">{event.name}</th>
       <td>
         {classifications?.[0]?.genre?.name} - {classifications?.[0]?.subGenre?.name}
       </td>
       <td>
-        <span
-          className={`${styles.statusIndicator}  ${
-            eventStatus === 'OFFSALE' ? styles.red : eventStatus === 'RESCHEDULED' ? styles.orange : ''
-          }`}
-        ></span>{' '}
-        {eventStatus}
+        <EventStatusIndicator status={eventStatus} />
       </td>
       <td>{localFormatDate}</td>
       <td>{venues?.[0]?.country?.name}</td>

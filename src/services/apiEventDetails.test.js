@@ -37,4 +37,13 @@ describe('getEventDetails', () => {
 
     await expect(getEventDetails(mockEventId)).rejects.toThrow('Failed to fetch event details');
   });
+
+  it('should throw an error if the event is not found', async () => {
+    global.fetch.mockResolvedValueOnce({
+      ok: true,
+      status: 404,
+    });
+
+    await expect(getEventDetails(mockEventId)).rejects.toThrow('No event has been found!');
+  });
 });

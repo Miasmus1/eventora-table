@@ -5,6 +5,7 @@ import styles from './EventsTable.module.css';
 import TablePagination from './TablePagination';
 import TableRow from './TableRow';
 import { getNestedProp } from '../../utils/getNestedProp';
+import { API_PAGE_SIZE } from '../../constants';
 
 function EventsTable() {
   const { events, isLoading, error } = useEvents();
@@ -14,6 +15,7 @@ function EventsTable() {
   const sortDirection = searchParams.get('sortDirection') || 'asc';
 
   const noEvents = events.length < 1;
+  const emptyRowsToFill = noEvents ? API_PAGE_SIZE : API_PAGE_SIZE - events.length;
 
   let fallbackEl;
   if (isLoading) {
@@ -92,7 +94,16 @@ function EventsTable() {
             <td colSpan={7}>{fallbackEl}</td>
           </tr>
         ) : (
-          sortedEvents.map((event) => <TableRow key={event.id} event={event} />)
+          <>
+            {sortedEvents.map((event) => (
+              <TableRow key={event.id} event={event} />
+            ))}
+            {Array.from({ length: emptyRowsToFill }, (_, index) => (
+              <tr key={`empty-${index}`} className={styles.emptyRow}>
+                <td colSpan={7}></td>
+              </tr>
+            ))}
+          </>
         )}
       </tbody>
 

@@ -9,6 +9,7 @@ export function useDetails(eventId) {
   } = useQuery({
     queryKey: ['eventDetails', eventId],
     queryFn: () => getEventDetails(eventId),
+    retry: 1,
   });
 
   return { eventDetails, isLoading, error };
