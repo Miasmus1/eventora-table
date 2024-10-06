@@ -69,7 +69,7 @@ function EventDetails() {
           </div>
 
           <div className={styles.eventDetailsNav}>
-            <Link to="/">Back</Link>
+            <Link to={-1}>Back</Link>
 
             <a href={eventDetails.url || '#'} target="_blank" rel="noopener noreferrer">
               Official Event Page {'>'}
