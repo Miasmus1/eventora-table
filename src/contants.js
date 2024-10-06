@@ -1,0 +1,3 @@
+export const API_PAGE_SIZE = 10;
+export const MAX_API_ELEMENT_LIMIT = 1000;
+export const MAX_API_PAGE_LIMIT = MAX_API_ELEMENT_LIMIT / API_PAGE_SIZE;

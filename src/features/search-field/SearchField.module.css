@@ -1,0 +1,45 @@
+.searchForm {
+  position: relative;
+  margin: 5rem auto;
+  width: 30vw;
+}
+
+.searchForm input {
+  all: unset;
+  color: #fff;
+  text-align: left;
+  padding: .8rem 1.6rem;
+  width: calc(100% - 3.2rem);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+}
+
+.searchForm input:focus {
+  box-shadow: 0 0 1px 1px var(--focus-color);
+}
+
+.searchIcon {
+  all: unset;
+  position: absolute;
+  top: 0.6rem;
+  right: 1.6rem;
+  cursor: pointer;
+  height: 3rem;
+}
+
+.searchIcon>svg {
+  width: 3rem;
+  height: 3rem;
+  stroke: #fff;
+  fill: #fff;
+  transition: all 0.2s;
+}
+
+.searchIcon:disabled svg {
+  cursor: not-allowed;
+}
+
+.searchIcon:hover svg {
+  stroke: var(--focus-color);
+  fill: var(--focus-color);
+}

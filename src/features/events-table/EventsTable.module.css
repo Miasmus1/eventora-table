@@ -1,0 +1,57 @@
+table.eventsTable {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: #fff;
+
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-color: var(--border-color);
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+.eventsTable thead {
+  background-color: var(--light-row-color);
+}
+
+.eventsTable thead {
+  text-align: left;
+  font-size: 1.4rem;
+}
+
+.eventsTable thead tr {
+  height: 5rem;
+}
+
+.eventsTable thead th {
+  font-weight: 400;
+  width: 30rem;
+}
+
+.eventsTable tbody {
+  background-color: var(--dark-row-color);
+  height: 80rem;
+  border-radius: 0.8rem;
+}
+
+.eventsTable tbody tr {
+  background-color: var(--dark-row-color);
+  height: 8rem;
+}
+
+.eventsTable tbody tr:hover {
+  background-color: var(--focus-color);
+  cursor: pointer;
+}
+
+.eventsTable th,
+.eventsTable td {
+  padding: 0.3rem 2.6rem;
+  text-align: left;
+  border: 1px solid;
+  border-color: var(--border-color);
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}

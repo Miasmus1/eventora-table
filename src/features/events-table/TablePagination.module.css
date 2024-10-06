@@ -1,0 +1,41 @@
+.tableFooter {
+  background-color: transparent;
+}
+
+.tableFooter td {
+  text-align: right;
+  padding-block: 2.4rem;
+  padding-inline: 0;
+  border: none;
+}
+
+.paginationContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tableFooter button {
+  all: unset;
+  margin-inline: 0.2rem;
+  border: 1px solid var(--unfocus-color);
+  border-radius: 5px;
+  padding: 0.5rem;
+  cursor: pointer;
+  width: 4rem;
+  text-align: center;
+  user-select: none;
+}
+
+.tableFooter button:hover:not(:disabled):not(.active) {
+  background-color: var(--unfocus-color);
+}
+
+.tableFooter button.active {
+  background-color: var(--focus-color);
+}
+
+.tableFooter button:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}

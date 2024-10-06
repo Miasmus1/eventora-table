@@ -1,0 +1,22 @@
+.eventDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 1rem;
+
+  padding: 3rem;
+  background-color: var(--dark-row-color);
+  max-width: 90rem;
+
+  margin: 10rem auto;
+}
+
+.eventDetailsContainer h2 {
+  max-width: 50rem;
+}
+
+.eventDetailsContainer img {
+  width: 40%;
+}

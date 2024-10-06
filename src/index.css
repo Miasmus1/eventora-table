@@ -1,0 +1,53 @@
+:root {
+  font-family: "Poppins", Arial, Helvetica, sans-serif, system-ui;
+
+  --background-color: #12101A;
+  --text-color: #404D61;
+  --faded-text-color: #B1B1B1;
+
+  --light-row-color: #414048;
+  --dark-row-color: #292730;
+  --border-color: #54535A;
+
+  --accent-row-color: #F8F8F8;
+  --focus-color: #5754FB;
+  --unfocus-color: #6C6A71;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  font-family: inherit;
+  transition: background-color 0.3s, border 0.3s;
+  text-wrap: pretty;
+}
+
+html {
+  font-size: 62.5%;
+  color: #fff;
+}
+
+body {
+  font-size: 1.6rem;
+  background: var(--background-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
