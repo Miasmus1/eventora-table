@@ -25,7 +25,13 @@ function EventDetails() {
       {eventDetails && (
         <article className={styles.eventDetailsContainer}>
           <figure className={styles.eventImage}>
-            <img src={eventDetails.images?.[0]?.url || ''} alt={eventDetails.name || 'Event Image'} />
+            <img
+              src={
+                eventDetails.images?.[0]?.url ||
+                'https://upload.wikimedia.org/wikipedia/commons/1/15/No_image_available_600_x_450.svg'
+              }
+              alt={eventDetails.name || 'Event Image'}
+            />
           </figure>
           <h2 className={styles.eventName}>{eventDetails?.name}</h2>
 
@@ -64,7 +70,13 @@ function EventDetails() {
           <div className={styles.eventSeatmap}>
             <h3>Seatmap</h3>
             <figure>
-              <img src={eventDetails.seatmap?.staticUrl || ''} alt="Seatmap" />
+              <img
+                src={
+                  eventDetails.seatmap?.staticUrl ||
+                  'https://upload.wikimedia.org/wikipedia/commons/1/15/No_image_available_600_x_450.svg'
+                }
+                alt="Seatmap"
+              />
             </figure>
           </div>
 
