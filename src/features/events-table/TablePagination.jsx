@@ -1,6 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 import { useEvents } from '../../contexts/EventsContext';
-import { API_PAGE_SIZE, MAX_API_PAGE_LIMIT } from '../../contants';
+import { API_PAGE_SIZE, MAX_API_PAGE_LIMIT } from '../../constants';
 
 import styles from './TablePagination.module.css';
 

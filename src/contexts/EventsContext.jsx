@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useReducer } from 'react';
 import { useSearch } from '../features/search-field/useSearch';
 import { useSearchParams } from 'react-router-dom';
-import { MAX_API_ELEMENT_LIMIT, MAX_API_PAGE_LIMIT } from '../contants';
+import { MAX_API_ELEMENT_LIMIT, MAX_API_PAGE_LIMIT } from '../constants';
 
 const EventsContext = createContext();
 

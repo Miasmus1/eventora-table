@@ -1,4 +1,4 @@
-import { API_PAGE_SIZE } from '../contants';
+import { API_PAGE_SIZE } from '../constants';
 import { tmURL, tmApiKey } from './ticketMaster';
 
 export async function getEvents(searchTerm, page) {
