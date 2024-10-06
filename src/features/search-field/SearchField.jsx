@@ -1,17 +1,22 @@
 import { useRef } from 'react';
 import { useEvents } from '../../contexts/EventsContext';
+import { useSearchParams } from 'react-router-dom';
 import SearchIcon from '../../ui/SearchIcon';
 import styles from './SearchField.module.css';
 
 function SearchField() {
-  const { setSearchTerm, isLoading } = useEvents();
+  const { isLoading } = useEvents();
+  const [searchParams, setSearchParams] = useSearchParams();
   const inputRef = useRef(null);
 
   function handleSubmit(e) {
     e.preventDefault();
     const formFields = new FormData(e.target);
     const searchInput = formFields.get('search').trim();
-    setSearchTerm(searchInput);
+
+    const existingParams = new URLSearchParams(searchParams);
+    existingParams.set('search', searchInput);
+    setSearchParams(existingParams);
 
     if (inputRef.current) {
       inputRef.current.value = '';

@@ -1,7 +1,6 @@
 import styles from './EventStatusIndicator.module.css';
 
 function EventStatusIndicator({ status }) {
-  console.log(status);
   return (
     <>
       <span
