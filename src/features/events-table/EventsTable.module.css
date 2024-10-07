@@ -27,6 +27,7 @@ table.eventsTable {
 .eventsTable thead th {
   font-weight: 400;
   width: 30rem;
+  cursor: pointer;
 }
 
 .eventsTable thead tr th:first-child {
