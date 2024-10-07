@@ -1,3 +1,5 @@
+// NOTE: This test is written for "formatDate.js". Since that function uses "undefined" value in .toLocaleDateString(undefined) method, it will use the system's selected locale. This means the expected output will vary for users from different locales. My system locale is "en-US" so the expected output is "10/1/2023". If you are from a different locale, you need to adjust the expected date format accordingly. For example, for "tr-TR" locale, the expected output will be "01.10.2023".
+
 import { describe, it, expect } from 'vitest';
 import formatDate from './formatDate';
 

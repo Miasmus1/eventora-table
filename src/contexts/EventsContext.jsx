@@ -7,6 +7,7 @@ const EventsContext = createContext();
 
 const initialState = {
   events: [],
+  searchQuery: '',
   totalPages: 0,
   totalElements: 0,
 };
@@ -15,6 +16,8 @@ function reducer(state, action) {
   switch (action.type) {
     case 'setEvents':
       return { ...state, ...action.payload };
+    case 'setSearchQuery':
+      return { ...state, searchQuery: action.payload };
     case 'setLoading':
       return { ...state, isLoading: action.payload };
     case 'setError':
@@ -37,12 +40,14 @@ function EventsProvider({ children }) {
   const { eventsResponse, isLoading, error } = useSearch({ searchTerm, page: pageParam });
 
   useEffect(() => {
-    if (searchTerm) {
+    if (searchTerm && location.pathname === '/' && searchQuery !== searchTerm) {
+      setSearchQuery(searchTerm);
       const existingParams = new URLSearchParams(searchParams);
+
       existingParams.set('page', 1);
       setSearchParams(existingParams);
     }
-  }, [searchTerm]);
+  }, [searchTerm, location.pathname, searchQuery, searchParams, setSearchParams]);
 
   useEffect(() => {
     if (eventsResponse && eventsResponse._embedded && eventsResponse.page.totalElements > 0) {
@@ -62,6 +67,10 @@ function EventsProvider({ children }) {
 
   function setEvents(value) {
     dispatch({ type: 'setEvents', payload: value });
+  }
+
+  function setSearchQuery(value) {
+    dispatch({ type: 'setSearchQuery', payload: value });
   }
 
   return (
