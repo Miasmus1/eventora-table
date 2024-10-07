@@ -43,9 +43,10 @@ function EventsProvider({ children }) {
     if (searchTerm && location.pathname === '/' && searchQuery !== searchTerm) {
       setSearchQuery(searchTerm);
       const existingParams = new URLSearchParams(searchParams);
-
-      existingParams.set('page', 1);
-      setSearchParams(existingParams);
+      if (!pageParam) {
+        existingParams.set('page', 1);
+        setSearchParams(existingParams);
+      }
     }
   }, [searchTerm, location.pathname, searchQuery, searchParams, setSearchParams]);
 
